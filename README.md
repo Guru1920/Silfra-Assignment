@@ -1,6 +1,8 @@
 # Silfra-Assignment
 Chat Application
 
+<img src="Readme Images/1.png">
+
 Components:
 Frontend (React.js):
 Login/Register Page: Users can login with a nickname and enter the public chat room.
@@ -23,6 +25,8 @@ Messages are instantly displayed to all participants within the chat room.
 Message History:
 The application stores the message history for each chat room.
 Users can view past messages upon joining a chat room.
+
+<img src="Readme Images/2.png">
 
 
 Technologies Used:
