@@ -3,7 +3,7 @@ Chat Application
 
 <img src="Readme Images/1.png">
 
-##Components:
+## Components:
 Frontend (React.js):
 Login/Register Page: Users can login with a nickname and enter the public chat room.
 Chat Room Selection: After logging in, users can choose from existing chat rooms or create new ones.
@@ -14,7 +14,7 @@ Backend:
 Server (Node.js/Express): Manages client connections and serves API requests.
 Database (MySQL): Stores user information, chat room data, and message history.
 
-##Functionality:
+## Functionality:
 
 Chat Room Management:
 Users can create new chat rooms.
@@ -29,7 +29,7 @@ Users can view past messages upon joining a chat room.
 <img src="Readme Images/2.png">
 
 
-##Technologies Used:
+## Technologies Used:
 Frontend:
 React.js: For building interactive user interfaces.
 React Router: For routing within the application.
