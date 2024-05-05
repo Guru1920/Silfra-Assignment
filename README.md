@@ -1,4 +1,4 @@
-# Chat Application
+# Chat Room Application
 
 <img src="Readme Images/1.png">
 
