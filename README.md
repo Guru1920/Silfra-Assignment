@@ -1,5 +1,4 @@
-# Silfra-Assignment
-Chat Application
+# Chat Application
 
 <img src="Readme Images/1.png">
 
@@ -15,13 +14,14 @@ Chat Application
 - Database (MySQL): Stores user information, chat room data, and message history.
 
 ## Functionality:
-
 Chat Room Management:
 - Users can create new chat rooms.
 - Existing chat rooms can be joined by selecting them from a list.
+  
 Real-Time Messaging:
 - Users can send messages in real-time to participants within the same chat room.
 - Messages are instantly displayed to all participants within the chat room.
+  
 Message History:
 - The application stores the message history for each chat room.
 - Users can view past messages upon joining a chat room.
