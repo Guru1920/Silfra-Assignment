@@ -4,13 +4,13 @@ Chat Application
 <img src="Readme Images/1.png">
 
 ## Components:
-Frontend (React.js):
+### Frontend (React.js):
 - Login/Register Page: Users can login with a nickname and enter the public chat room.
 - Chat Room Selection: After logging in, users can choose from existing chat rooms or create new ones.
 - Chat Interface: Once inside a chat room, users can send and receive messages in real-time.
 
 
-Backend:
+### Backend:
 - Server (Node.js/Express): Manages client connections and serves API requests.
 - Database (MySQL): Stores user information, chat room data, and message history.
 
@@ -30,14 +30,14 @@ Message History:
 
 
 ## Technologies Used:
-Frontend:
+### Frontend:
 - React.js: For building interactive user interfaces.
 - React Router: For routing within the application.
 - Axios: For making HTTP requests to the backend server.
-Backend:
+### Backend:
 - Node.js: For server-side JavaScript runtime.
 - Express.js: For building the RESTful API.
 - Socket.IO: For real-time bidirectional event-based communication.
 - MySQL: For storing user data, chat room information, and message history.
-Database:
+### Database:
 - MySQL: A relational database management system used to store user data and chat-related information.
