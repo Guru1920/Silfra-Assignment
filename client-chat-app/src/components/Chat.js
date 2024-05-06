@@ -77,6 +77,28 @@ const Chat = ({ location }) => {
     }
   };
 
+  const fetchChats = async()=>{
+    fetch("http://localhost:3002/allchats", {
+      method:"GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json()).then((data)=>{
+      console.log(data)
+      let rows = []
+      if(data)
+        for (let index = 0; index < data.length; index++) {
+          const message = data[index];
+          rows.push({user: message.sender, time: message.date, text: message.message, color: message.color})
+        }
+        console.log(rows)
+        setMessages(rows)
+    })
+  }
+
+  useEffect(()=>{
+    fetchChats()
+  },[])
   return (
     <Container className={classes.wrapper}>
       <Container className={classes.container}>

@@ -19,6 +19,7 @@
     "morgan": "~1.9.1",
     "randomcolor": "^0.5.4",
     "socket.io": "^2.3.0",
+    "sqlite3": "^5.1.7",
     "uuid": "^8.2.0"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const randomcolor = require("randomcolor");
-
+const database = require("./db.js");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
@@ -28,7 +28,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
+database.createChatTable()
+app.get("/allchats",async (req, res)=>{
+  let rows = await database.getChats()
+  return res.json(rows)
+})
 io.on("connection", (socket) => {
   // const { id } = socket.client;
   const id = socket.id;
@@ -59,6 +63,8 @@ io.on("connection", (socket) => {
       color: adminColor,
       time: new Date(),
     });
+    
+    
     console.log(`sending welcome message to ${user.nickname}`);
 
     // informing averybody else except the user that a new user has joined the chat
@@ -78,6 +84,9 @@ io.on("connection", (socket) => {
     const user = getUser(id);
     console.log("msgSend", user, message);
     if (user) {
+      let dateTime = (new Date()).toDateString()
+      let nickname = user.nickname
+      database.insertChat({sender: nickname,date: dateTime, message,color: user.color  } )
       console.log("msgSend --user--message: ", user.nickname, message);
       io.to(user.room).emit("message", {
         user: user.nickname,
@@ -119,6 +128,16 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+
+// app.post("/insertchat", async(req, res)=>{
+//   try {
+//     let {from, to, date, message} = req.body
+//     let result = await database.insertChat({from, to, date, message})
+//     return res.json({success:true});
+//   } catch (error) {
+//     return res.status(500).json({success:false});
+//   }
+// })
 const PORT = process.env.PORT || 3002;
 server.listen(PORT, () => console.log(`Server listen on *: ${PORT}`));
 
